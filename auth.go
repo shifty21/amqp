@@ -60,3 +60,14 @@ func pickSASLMechanism(client []Authentication, serverMechanisms []string) (auth
 
 	return
 }
+
+type ExternalAuth struct {
+}
+
+func (auth *ExternalAuth) Mechanism() string {
+	return "EXTERNAL"
+}
+
+func (auth *ExternalAuth) Response() string {
+	return ""
+}
